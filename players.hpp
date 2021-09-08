@@ -23,14 +23,14 @@ public:
 	//increasepower();
 	//bool increasePower();
 	void decreaseHealth();//
-	bool increaseDefense();
+	void IncreasingDefense();
 	//void attack();
 	virtual void winChant();
 
 private:
 	int health;
 	string name;
-	bool increaseDefense;
+	bool incDefense;
 	//string name2;
 	//int defense:// let defense be a number that subtracts with power.
 	//bool increasePower;

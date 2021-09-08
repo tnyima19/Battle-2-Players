@@ -1,7 +1,10 @@
 #include"attack.hpp"
 
+
 Attack::Attack()
 {
+	Player1 player1;
+	Player2 player2;
 	// create pointers that point to the players.
 	//string* player1 = new player1();
 	//string* player2 = new player2();
@@ -57,6 +60,9 @@ void Attack::declareVictor()
 		player1.winChant();
 	
 }
+void Attack::IncreaseDefense(Players &player){
+	player.IncreasingDefense();
+}
 
 string Attack::startAttack()
 {
@@ -70,7 +76,7 @@ string Attack::startAttack()
 	int input2;
 	cout<<"health P1:"<<player1.showHealth()<<"         Health P2:"<<player2.showHealth()<<endl;
 	cout<<"player 1 input"<<endl;
-	cout<<"choose option 1. attack   2.dont attack"<<endl;
+	cout<<"choose option 1. attack   2.increase Defense"<<endl;
 	cin>>input1;
 	if(input1 ==1)
 	{
@@ -91,8 +97,9 @@ string Attack::startAttack()
 	
 
 	cout<<"player 2 input"<<endl;
-	cout<<"choose option 1. attack and 2. dont attack"<<endl;
-	cin>>input2;
+	cout<<"choose option 1. attack and 2. increase defense"<<endl;
+	srand(time(0));
+	input2 = (rand()%10)%2;
 	if(input2 ==1)
 	{
 		attack("player2");
@@ -100,7 +107,7 @@ string Attack::startAttack()
 	}
 	else
 	{
-		cout<<"player 2 choose not to attack"<<endl;
+		cout<<"Player 2 chooses to defend"<<endl;
 	}
 
 	startAttack();

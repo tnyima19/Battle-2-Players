@@ -10,6 +10,7 @@ class Player2 : public Players
 public:
 	Player2();
 	Player2(string give_name);
+	//virtual void FightPattern();
 	//friend bool Player1::increaseDefense()
 	//friend bool Player1::increasePower()
 	//int showHealth();
@@ -21,3 +22,4 @@ public:
 
 };
 #endif
+

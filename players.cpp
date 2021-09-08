@@ -41,18 +41,18 @@ int Players::showHealth()
 	return health;
 }
 
-bool Players::increaseDefense()
+void Players::IncreasingDefense()
 {
-	increaseDefense = true;
+	incDefense = true;
 }
 
 void Players::decreaseHealth()
 {
-	if(increaseDefense = true)
+	if(incDefense == true)
 	{
 		int new_power = 6;
 		health = health -power;
-		increaseDefense= false;
+		incDefense= false;
 	}
 	else
 	{

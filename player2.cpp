@@ -23,7 +23,6 @@ Player2::Player2(string give_name)
 
 
 
-
 /*
 
 bool Player1::increasePower()
