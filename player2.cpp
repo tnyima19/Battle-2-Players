@@ -4,21 +4,25 @@
 
 Player2::Player2()
 {
-	setName("player2");
-	setFullHealth();
-	setPower();
-
-
+	SetHealth(0);
+	SetName("");
+	SetDefense(false);
+	SetPower(0);
+	SetRound(0);
+	
 }
 
 
 
 
-Player2::Player2(string give_name)
+Player2::Player2(int new_health,string give_name,bool new_Defense,int new_power,int new_round)
 {
-	setName(give_name);
-	setFullHealth();
-	setPower();
+	SetHealth(100);
+	SetName(give_name);
+	SetDefense(new_Defense);
+	SetPower(new_power);
+	SetRound(new_round);
+
 }
 
 
@@ -59,5 +63,5 @@ void Player2::attack()
 
 void Player2::winChant()
 {
-	cout<<" player2 has won"<<endl;
+	cout<<" ENEMY has won"<<endl;
 }

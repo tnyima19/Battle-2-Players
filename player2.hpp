@@ -9,7 +9,7 @@ class Player2 : public Players
 {
 public:
 	Player2();
-	Player2(string give_name);
+	Player2(int new_health,string give_name,bool new_defense,int new_power,int new_round);
 	//virtual void FightPattern();
 	//friend bool Player1::increaseDefense()
 	//friend bool Player1::increasePower()

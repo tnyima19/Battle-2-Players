@@ -3,64 +3,121 @@
 	//construct player1.
 Players::Players()// if no name given player1
 {
-	name = "Player1";
+	name = "";
 	//name2 = "Player2";
-	setFullHealth();
-	setPower();
-	//defense = 0;
+	//setFullHealth();
+	//setPower();
+	power =0;
+	health = 0;
+	round = 0;
+	incDefense = false;
 	//power = 20;
 }
 
 
-Players::Players(string give_name1)// increase defense
-{	
-	setName(give_name1);
-	//name2 = give_name2;
-	setFullHealth();
-	//defense = 0;
-	setPower();
+Players::Players(int new_health,string give_name, bool new_defense,int new_power, int new_round)// increase defense
+{
+	health = new_health;
+	name = give_name;
+	incDefense= new_defense;
+	power = new_power;
+	round = new_round;
+
 }
 
-void Players::setName(string new_name)
+
+
+// //COPY CONSTRUCTOR 
+// Players::Players(const Players &rhs){health= rhs.health;name=rhs.name;incDefense=rhs.incDefense;power=rhs.power}
+
+
+// // move contructor 
+// Players::Players(Players &&rhs) : health{rhs.health},name{rhs.health},incDefense{rhs.incDefense},power{rhs.power}{}
+
+//Move assignment,
+// //Just use std::swap
+// Players::Players& operator=(Players &&rhs){
+// 	swap(health,rhs.health);
+// 	swap(name,rhs.name);
+// 	swap(incDefense,rhs.Defense);
+// 	swap(power,rhs.power);
+
+// 	return *this;
+// }
+// //COPY ASSIGNMENT 
+// Players::Players& operator=(const Players &rhs){
+// 	Players copy = rhs;
+// 	swap(*this, copy);
+// 	return *this;
+// }
+
+
+void Players::SetName(string new_name)
 {
 	name = new_name;
 
 }
-
-void Players::setFullHealth()
-{
-	health = 100;
+void Players::SetDefense(int new_defense){
+	incDefense = new_defense;
 }
-void Players::setPower()
+void Players::SetHealth(int new_health)
 {
-	power = 20;
+	health = new_health;
+}
+void Players::SetPower(int new_power)
+{
+	power = new_power;
+}
+void Players::SetRound(int new_round){
+	round = new_round;
 }
 	
-int Players::showHealth()
+void Players::ShowHealth()
 {
+	for(int i=0;i<health;i++){
+		cout<<"||";
+	}
+}
+int Players::GetDefense(){
+	return incDefense;
+}
+int Players::GetPower(){
+	return power;
+}
+string Players::GetName(){
+	return name;
+}
+int Players::GetHealth(){
 	return health;
+}
+int Players::GetRound(){
+	return round;
 }
 
 void Players::IncreasingDefense()
 {
 	incDefense = true;
+	round =3;
 }
 
 void Players::decreaseHealth()
 {
-	if(incDefense == true)
-	{
-		int new_power = 6;
-		health = health -power;
-		incDefense= false;
+	//round;
+	if(incDefense ==false && round ==0){
+		health =health - power;
 	}
-	else
-	{
-		health = health - power;
+	else{
+		
+		health = health + 10 - power;
+		round--;
+		if(round ==0)
+			incDefense=false;
 	}
-	//health = health - power;
+
+
 }
 
+//Players::~Players() = default;
 /*
 void Player::increaseDefense()// increase power
 {

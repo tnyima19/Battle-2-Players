@@ -7,7 +7,9 @@ using namespace std;
 
 int main()
 {
-	Attack round1;
+	Player1 p1(100,"Player1",false,20,0);
+	Player2 p2(100,"Enemy",false,20,0);
+	Attack round1(p1,p2);
 
 	//Player1("Tenzing");
 	//Player2("enemy");
@@ -15,7 +17,7 @@ int main()
 	//round1->addPlayer(one);
 	//round1->addPlayer(two);
 
-	round1.startAttack();
+	round1.StartGame();
 
 	/*
 

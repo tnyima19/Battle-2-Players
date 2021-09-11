@@ -4,20 +4,24 @@
 
 Player1::Player1()
 {
-	setName("player1");
-	setFullHealth();
-	setPower();
+	SetHealth(0);
+	SetName("");
+	SetDefense(false);
+	SetPower(0);
+	SetRound(0);
 
 }
 
 
 
 
-Player1::Player1(string give_name)
+Player1::Player1(int new_health,string give_name,bool new_Defense,int new_power,int new_round)
 {
-	setName(give_name);
-	setFullHealth();
-	setPower();
+	SetHealth(new_health);
+	SetName(give_name);
+	SetDefense(new_Defense);
+	SetPower(new_power);
+	SetRound(new_round);
 }
 
 

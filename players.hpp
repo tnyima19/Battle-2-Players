@@ -2,6 +2,9 @@
 #define PLAYERS_H_
 #include<iostream>
 #include<string>
+#include<cstddef>
+#include<sstream>
+#include<string>
 using namespace std;
 //#define health 100;
 
@@ -13,11 +16,19 @@ class Players
 public:
 	//construct player1.
 	Players();// if no name given player1
-	Players(string give_name1);
-	void setName(string new_name);
-	void setFullHealth();
-	void setPower();
-	int showHealth();
+	Players(int new_health,string give_name,bool new_defense,int new_power,int new_round);
+	//void setName(string new_name);
+	void SetName(string new_name);
+	void SetHealth(int new_health);
+	void SetPower(int new_power);
+	void ShowHealth();
+	void SetDefense(int new_defense);
+	void SetRound(int new_round);
+	int GetDefense();
+	int GetPower();
+	string GetName();
+	int GetHealth();
+	int GetRound();
 	// increase defense
 	//bool increaseDefense();
 	//increasepower();
@@ -26,6 +37,7 @@ public:
 	void IncreasingDefense();
 	//void attack();
 	virtual void winChant();
+	//~Players();
 
 private:
 	int health;
@@ -35,12 +47,11 @@ private:
 	//int defense:// let defense be a number that subtracts with power.
 	//bool increasePower;
 	int power; // 
+	int round;
 	
 };
 #endif
 
 // we need two players..
-
-
 
 // things two players can do. 
