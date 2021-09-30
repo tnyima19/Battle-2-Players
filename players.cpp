@@ -10,16 +10,16 @@ Players::Players()// if no name given player1
 	power =0;
 	health = 0;
 	round = 0;
-	incDefense = false;
+	//incDefense = false;
 	//power = 20;
 }
 
 
-Players::Players(int new_health,string give_name, bool new_defense,int new_power, int new_round)// increase defense
+Players::Players(int &new_health,string &give_name,int &new_power, int &new_round)// increase defense
 {
 	health = new_health;
 	name = give_name;
-	incDefense= new_defense;
+	//incDefense= new_defense;
 	power = new_power;
 	round = new_round;
 
@@ -57,8 +57,15 @@ void Players::SetName(string new_name)
 	name = new_name;
 
 }
-void Players::SetDefense(int new_defense){
-	incDefense = new_defense;
+bool Players::DefenseState(){
+	if(round<=0)
+		return false;
+	
+	this->round--;
+	return true;
+	
+		//return true;
+	//incDefense = new_defense;
 }
 void Players::SetHealth(int new_health)
 {
@@ -68,7 +75,7 @@ void Players::SetPower(int new_power)
 {
 	power = new_power;
 }
-void Players::SetRound(int new_round){
+void Players::SetRound(int &new_round){
 	round = new_round;
 }
 	
@@ -78,9 +85,9 @@ void Players::ShowHealth()
 		cout<<"||";
 	}
 }
-int Players::GetDefense(){
-	return incDefense;
-}
+// bool Players::GetDefense(){
+// 	return incDefense;
+// }
 int Players::GetPower(){
 	return power;
 }
@@ -93,26 +100,36 @@ int Players::GetHealth(){
 int Players::GetRound(){
 	return round;
 }
+// void Players::SetRound(int new_round){
+// 	round = new_round;
+// }
 
 void Players::IncreasingDefense()
 {
-	incDefense = true;
-	round =3;
+	//incDefense = true;
+	this->round =3;
 }
+// bool Players::DefenseState(){
+// 	if(incDefense == true)
+// 		return true;
+// 	else 
+// 		return false;
+// }
 
-void Players::decreaseHealth()
+void Players::decreaseHealth(int &num)
 {
-	//round;
-	if(incDefense ==false && round ==0){
-		health =health - power;
-	}
-	else{
+	// //round;
+	// if(incDefense ==false && round ==0){
+	// 	health =health - power;
+	// }
+	// else{
 		
-		health = health + 10 - power;
-		round--;
-		if(round ==0)
-			incDefense=false;
-	}
+	// 	health = health + 10 - power;
+	// 	round--;
+	// 	if(round ==0)
+	// 		incDefense=false;
+	// }
+	health =health - num;
 
 
 }

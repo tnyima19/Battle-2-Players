@@ -16,24 +16,26 @@ class Players
 public:
 	//construct player1.
 	Players();// if no name given player1
-	Players(int new_health,string give_name,bool new_defense,int new_power,int new_round);
+	Players(int &new_health,string &give_name,int &new_power,int &new_round);
 	//void setName(string new_name);
 	void SetName(string new_name);
 	void SetHealth(int new_health);
 	void SetPower(int new_power);
 	void ShowHealth();
-	void SetDefense(int new_defense);
-	void SetRound(int new_round);
-	int GetDefense();
+	//void SetDefense(int &new_defense);
+	bool DefenseState();
+	void SetRound(int &new_round);
+	//bool GetDefense();
 	int GetPower();
 	string GetName();
 	int GetHealth();
 	int GetRound();
+	//void SetRound(int &new_round);
 	// increase defense
 	//bool increaseDefense();
 	//increasepower();
 	//bool increasePower();
-	void decreaseHealth();//
+	void decreaseHealth(int &num);//
 	void IncreasingDefense();
 	//void attack();
 	virtual void winChant();
@@ -42,7 +44,7 @@ public:
 private:
 	int health;
 	string name;
-	bool incDefense;
+	//bool incDefense;
 	//string name2;
 	//int defense:// let defense be a number that subtracts with power.
 	//bool increasePower;

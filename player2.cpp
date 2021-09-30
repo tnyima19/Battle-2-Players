@@ -4,25 +4,30 @@
 
 Player2::Player2()
 {
-	SetHealth(0);
+	int hp= 100;
+	string name = "";
+	int power = 20;
+	int round = 0;
+	SetHealth(hp);
 	SetName("");
-	SetDefense(false);
-	SetPower(0);
-	SetRound(0);
-	
+	//SetDefense(false);
+	SetPower(power);
+	SetRound(round);
+	//this->round = round;
+
 }
 
 
 
 
-Player2::Player2(int new_health,string give_name,bool new_Defense,int new_power,int new_round)
+Player2::Player2(int &new_health,string &give_name,int &new_power,int &new_round)
 {
-	SetHealth(100);
+	SetHealth(new_health);
 	SetName(give_name);
-	SetDefense(new_Defense);
+	//SetDefense(new_Defense);
 	SetPower(new_power);
 	SetRound(new_round);
-
+	//this->round = new_round;
 }
 
 

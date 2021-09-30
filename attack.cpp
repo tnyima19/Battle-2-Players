@@ -3,13 +3,33 @@
 
 Attack::Attack()
 {
-	Player1 player1(100,"Player1",false,20,0);
-	Player2 player2(100,"Enemy",false,20,0);
+	int hp = 100;
+	int power = 20;
+	int round =0;
+	string p1 = "Player1";
+	string p2 = "Enemy";
+	Player1 player1(hp,p1,power, round);
+	Player2 player2(hp, p2,power,round);
 }
-Attack::Attack(Player1 player_1, Player2 player_2){
+Attack::Attack(Player1 &player_1, Player2 &player_2,int &new_power1, int& new_power2){
 	
+
 	player1 = player_1;
 	player2 = player_2;
+	player1.SetPower(new_power1);
+	player2.SetPower(new_power2);
+	// player1 = player_1;
+	// int hp = 100;
+	// player1.SetHealth(hp);
+	// player1.SetPower(new_power1); 
+	// player2 = player_2;
+	// player2.SetHealth(hp);
+	// player1.SetPower(new_power2);
+	// int round = 0;
+	// player1.SetRound(round);
+	// player2.SetRound(round);
+	// //power2=new_power2;
+
 
 }
 /*
@@ -38,20 +58,25 @@ void Attack::addPlayers(Players new_players)
 }
 */
 
-void Attack::attack(Player1 name_player)
-{
-	
-		player1.decreaseHealth();
-	
-	
-}
-void Attack::attack(Player2 name_player)
-{
-	
-		player2.decreaseHealth();
+// void Attack::strike(Player1 &name_player)
+// {
+// 	if(name_player.GetDefense()==true)
+// 		name_player.decreaseHealth(power1-((1/2)*power1));
+// 	else
+// 		name_player.decreaseHealth(power1);
 	
 	
-}
+// }
+// void Attack::strike(Player2 &name_player)
+// {
+	
+// 	if(name_player.GetDefense()==true)
+// 		name_player.decreaseHealth(power1-((1/2)*power2));
+// 	else
+// 		name_player.decreaseHealth(power1);
+	
+	
+// }
 
 void Attack::declareVictor()
 {
@@ -61,20 +86,21 @@ void Attack::declareVictor()
 		player1.winChant();
 	
 }
-void Attack::IncreaseDefense(Player1 player){
+void Attack::IncreaseDefense(Player1 &player){
 	player.IncreasingDefense();
 }
-void Attack::IncreaseDefense(Player2 player){
+void Attack::IncreaseDefense(Player2 &player){
 	player.IncreasingDefense();
 }
 
-void Attack::ShowHealth(Players player){
+void Attack::ShowHealth(Players &player){
 	for(int i=0;i<player.GetHealth();i+=2)
 		cout<<"|";
 }
 
 string Attack::StartGame()
 {
+	
 	if(player1.GetHealth()<=0 || player2.GetHealth()<=0)
 	{
 		declareVictor();
@@ -90,7 +116,15 @@ string Attack::StartGame()
 	cin>>input1;
 	if(input1 ==1)
 	{
-		attack(player2);
+		//strike(player2);
+		if(player2.DefenseState()==true){
+			power= player1.GetPower()/2;
+			player2.decreaseHealth(power);
+		}
+		else{
+			power = player1.GetPower();
+			player2.decreaseHealth(power);
+		}
 		cout<<"player1 attacked player2"<<endl;
 	}
 	else if(input1 ==2)
@@ -113,7 +147,15 @@ string Attack::StartGame()
 	input2 = (rand()%10)%2;
 	if(input2 ==1)
 	{
-		attack(player1);
+		//strike(player1);
+		if(player1.DefenseState()== true){
+			power= player2.GetPower()/2;
+			player1.decreaseHealth(power);
+		}
+		else{
+			power = player2.GetPower();
+			player1.decreaseHealth(power);
+		}
 		cout<<"player 2 attacked player 1"<<endl;
 	}
 	else

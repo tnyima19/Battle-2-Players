@@ -4,24 +4,30 @@
 
 Player1::Player1()
 {
-	SetHealth(0);
-	SetName("");
-	SetDefense(false);
-	SetPower(0);
-	SetRound(0);
+	int hp = 100;
+	string p1 = "player";
+	int power = 20;
+	int round =0;
+	SetHealth(hp);
+	SetName(p1);
+	//SetDefense(false);
+	SetPower(power);
+	SetRound(round);
+	//this->round = round;
 
 }
 
 
 
 
-Player1::Player1(int new_health,string give_name,bool new_Defense,int new_power,int new_round)
+Player1::Player1(int &new_health,string &give_name,int &new_power,int &new_round)
 {
 	SetHealth(new_health);
 	SetName(give_name);
-	SetDefense(new_Defense);
+	//SetDefense(new_Defense);
 	SetPower(new_power);
 	SetRound(new_round);
+	//this->round = new_round;
 }
 
 
