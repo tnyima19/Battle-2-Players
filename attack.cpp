@@ -125,12 +125,12 @@ string Attack::StartGame()
 			power = player1.GetPower();
 			player2.decreaseHealth(power);
 		}
-		cout<<"player1 attacked player2"<<endl;
+		cout<<"PLAYER 1 ATTACKED PLAYER 2"<<endl;
 	}
 	else if(input1 ==2)
 	{
 		IncreaseDefense(player1);
-		cout<<"you choose to Defend"<<endl;
+		cout<<"YOU CHOSE TO DEFEND"<<endl;
 	}
 
 	if(player1.GetHealth()<=0 || player2.GetHealth()<=0)
@@ -156,12 +156,12 @@ string Attack::StartGame()
 			power = player2.GetPower();
 			player1.decreaseHealth(power);
 		}
-		cout<<"player 2 attacked player 1"<<endl;
+		cout<<"PLAYER 2 ATTACKED PLAYER 1"<<endl;
 	}
 	else
 	{
 		IncreaseDefense(player2);
-		cout<<"Player 2 chooses to defend"<<endl;
+		cout<<"PLAYER 2 DEFENDED"<<endl;
 	}
 
 	StartGame();

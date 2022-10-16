@@ -34,15 +34,7 @@ int main()
 	// Attack round3(p1,p4,20,60);
 
 
-
-
-	
-
-
 	return 0;
-
-
-
 
 
 
