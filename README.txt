@@ -1,5 +1,5 @@
-#Battle between 2 players. 
-##First phase 
+# Battle between 2 players. 
+## First phase 
 This is A very basic game where two players battle.
 -Players can attack.
 -Players can defend.
@@ -7,7 +7,7 @@ This is A very basic game where two players battle.
 Your health is determined by number. 
 Both players will have 100 health inthe beginning.
 
-##2nd phase 
+## 2nd phase 
 The game now has multiple levels
 After you defeat the first enemy. 
 You go to the second level where the boss heath doubled. 
