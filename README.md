@@ -1,26 +1,34 @@
-# Battle between 2 players. 
-## First phase 
-This is A very basic game where two players battle.
--Players can attack.
--Players can defend.
--Defense halves the damage of your opponent for next turn. 
-Your health is determined by number. 
-Both players will have 100 health inthe beginning.
+# BATTLE OPPONENT
 
-## 2nd phase 
-The game now has multiple levels
-After you defeat the first enemy. 
-You go to the second level where the boss heath doubled. 
-if you defeat him you go to level 3. 
+Terminal Game
+Game built using principles of Class and inheritance.
+
+📝 `NOTE - PASTE PART 2 SNIPPET HERE:` Paste the README template for part 2 of this assignment here at the top. This will show a history of your development process, which users stories you completed and how your app looked and functioned at each step.
+
+---
+
+## BATTLE Part 1
+
+### User Stories
+`TODO://` In the **User Stories section below**, add an `x` in the `-[ ]` like this `- [x]` for any user story you complete. (🚫 Remove this paragraph after checking off completed user stories)
+
+#### REQUIRED (10pts)
+- [x] (2pts) Create two players who battle
+- [x] (5pts) You can damage the opponent and decrease opponent's health bar and vice versa
+- [x] (3pts) Multiple Levels, A new opponent with greater health and damage arrives after you defeat an opponent.
+
+#### ADD IN FUTURE
+- [ ] (2pt) Agility for players to give probability to dodge attacks. 
+- [ ] (1pt) Increase players level which whould be directly propotional to its attack damage and health
+
+### App Walkthrough GIF
+`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
 
 
-This project was built using core concepts from Inheritance and Polymorphism. 
 
-------------------PLANS FOR FUTURE
-Turn base combat.(DONE)
-Improvements I am planning to make.(DONE )
-Health bar for both players.(DONE)
-Ability to increase defense.(DONE)
-Include Agility so that players can dodge attacks using probablity.
+### Notes
+Describe any challenges encountered while building the app.
+
+
 
 
